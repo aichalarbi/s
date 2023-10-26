@@ -1,0 +1,31 @@
+ALGORITHM checkpoint
+    VAR
+    ch:STRING
+    BEGIN
+        write("enter a word ")
+        read(ch)
+        IF (palindrome(ch)) THEN
+            write("this word is palindrome")
+        ELSE
+            write("this word isn't palindrome")
+        END_IF
+    END
+
+
+    FUNCTION palindrome(ch:STRING):BOOLEAN
+    BEGIN
+        IF (ch.length <= 1) THEN
+    //we need to verify the length of the string
+            RETURN True
+        END_IF 
+        IF (ch[0] = ch[-1]) THEN
+            RETURN palindrome(ch[1:-1])
+    // slice the string from the first character we tested to the last one
+        ELSE
+            RETURN False
+        END_IF 
+    END
+
+    
+    
+    
